@@ -31,7 +31,7 @@ B.RemoveAt(0);
 //set points
 for (int i = 0; i < N; i++)
 {
-    points[i] = new Point(rand.Next(1, 100), rand.Next(1, 100));
+    points[i] = new Point(rand.Next(1, 400), rand.Next(1, 400));
 }
 
 
@@ -70,7 +70,7 @@ void PrintAB(){
     Console.Write("  ");
     }
     Console.Write($"CurrentDistance: {currentDistance, -10:F2}");
-    Console.Write($"LastMoveDistance: {lastMoveDistance, -8:F2}");
+    Console.Write($"LastMoveDistance: {lastMoveDistance, -10:F2}");
     Console.Write($"BestDistance: {bestDistance:F2}");
 }
 void PrintPoints(){
@@ -93,15 +93,14 @@ bool Oracle(){
 
 void BB(){
     // PrintAB();
-    
     if (B.Count == 0)
     {
-        // Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
-        // if (currentDistance < bestDistance)
-        // {
-        //     bestDistance = currentDistance;
-        // }
-        return;
+        Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
+        if (currentDistance < bestDistance)
+        {
+            bestDistance = currentDistance;
+        }
+        // return;
     }
     else
     {
@@ -114,13 +113,13 @@ void BB(){
             lastMoveDistance = DistanceBetweenPoints(points[A.Count -1], points[A.Count -2]);
             currentDistance += lastMoveDistance;
             PrintAB();
-            if (B.Count == 0){
-                Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
-                if (currentDistance < bestDistance)
-                {
-                    bestDistance = currentDistance;
-                }
-            }
+            // if (B.Count == 0){
+            //     Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
+            //     if (currentDistance < bestDistance)
+            //     {
+            //         bestDistance = currentDistance;
+            //     }
+            // }
 
             if(Oracle())
             { 
@@ -145,12 +144,6 @@ void BB(){
         }
     }
 }
-
-int minCartesianQuotient(){
-    return 0;
-}
-
-
 
 
 
