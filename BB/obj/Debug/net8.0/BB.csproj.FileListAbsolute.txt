@@ -26,3 +26,4 @@ D:\GitHub\Csharp\BB\BB\obj\Debug\net8.0\refint\BB.dll
 D:\GitHub\Csharp\BB\BB\obj\Debug\net8.0\BB.pdb
 D:\GitHub\Csharp\BB\BB\obj\Debug\net8.0\BB.genruntimeconfig.cache
 D:\GitHub\Csharp\BB\BB\obj\Debug\net8.0\ref\BB.dll
+D:\GitHub\Csharp\BB\BB\obj\Debug\net8.0\BB.sourcelink.json

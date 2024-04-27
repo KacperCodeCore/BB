@@ -93,13 +93,15 @@ bool Oracle(){
 
 void BB(){
     // PrintAB();
+    
     if (B.Count == 0)
     {
-        Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
-        if (currentDistance < bestDistance)
-        {
-            bestDistance = currentDistance;
-        }
+        // Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
+        // if (currentDistance < bestDistance)
+        // {
+        //     bestDistance = currentDistance;
+        // }
+        return;
     }
     else
     {
@@ -112,8 +114,23 @@ void BB(){
             lastMoveDistance = DistanceBetweenPoints(points[A.Count -1], points[A.Count -2]);
             currentDistance += lastMoveDistance;
             PrintAB();
+            if (B.Count == 0){
+                Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
+                if (currentDistance < bestDistance)
+                {
+                    bestDistance = currentDistance;
+                }
+            }
 
-            if(Oracle()){ BB();}
+            if(Oracle())
+            { 
+                BB();
+                // Console.Write($"\n  -CurrentDistance: {currentDistance:F2}   BestDistance: {bestDistance:F2}");
+                // if (currentDistance < bestDistance)
+                // {
+                //     bestDistance = currentDistance;
+                // }
+            }
 
             lastMoveDistance = -DistanceBetweenPoints(points[A.Count -1], points[A.Count -2]);
             currentDistance += lastMoveDistance;
